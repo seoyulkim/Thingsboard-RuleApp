@@ -1,0 +1,16 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "test rule chain1",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": null,
+    "nodes": [],
+    "connections": null,
+    "ruleChainConnections": null
+  }
+}

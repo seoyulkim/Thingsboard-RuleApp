@@ -1,0 +1,52 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "test rule chain2",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 342,
+          "layoutY": 154
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "test filter",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "return msg.illuminance > 20;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 618,
+          "layoutY": 150
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "test alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmType": "Critical Illuminance",
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "severity": "CRITICAL",
+          "propagate": false,
+          "useMessageAlarmData": false,
+          "relationTypes": []
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "True"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}
